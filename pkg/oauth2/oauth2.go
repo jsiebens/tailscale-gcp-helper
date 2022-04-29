@@ -45,10 +45,6 @@ type tailscaleTokenSource struct {
 	serviceAccount string
 }
 
-func DefaultAudience(projectNumber, poolId, providerId string) string {
-	return fmt.Sprintf("//iam.googleapis.com/projects/%s/locations/global/workloadIdentityPools/%s/providers/%s", projectNumber, poolId, providerId)
-}
-
 func DefaultConfig(serviceAccount string, audience string) *Config {
 	return &Config{
 		Scope:          "https://www.googleapis.com/auth/cloud-platform",
